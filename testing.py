@@ -487,7 +487,7 @@ def erdos_renyi_gilbert(n,p,type):
                         case 'normalWeights_normalPreds_independent':
                             true_weight = random.normalvariate(0.5,0.15)
                             pred_weight = random.normalvariate(0.5,0.15)
-                        case 'normalWeights_normalPreds_not_indepndent':
+                        case 'normalWeights_normalPreds_not_independent':
                             true_weight = random.normalvariate(0.5,0.15)
                             pred_weight = random.normalvariate(true_weight,0.15)
                         case 'normalWeights_unifPreds':
@@ -496,7 +496,7 @@ def erdos_renyi_gilbert(n,p,type):
                         case 'unifWeights_normalPreds_independent':
                             true_weight = random.uniform(0,1)
                             pred_weight = random.normalvariate(0.5,0.15)
-                        case 'unifWeights_normalPreds_not_indepndent':
+                        case 'unifWeights_normalPreds_not_independent':
                             true_weight = random.uniform(0,1)
                             pred_weight = random.normalvariate(true_weight,0.15)
                         case 'unifWeights_unifPreds':
@@ -553,7 +553,7 @@ def get_largest_connected_component(graph,graph_matrix):
 #######################################################
 #######################################################
 
-synth_data = {'normalWeights_normalPreds_independent','normalWeights_normalPreds_not_indepndent','normalWeights_unifPreds','unifWeights_normalPreds_independent','unifWeights_normalPreds_not_indepndent','unifWeights_unifPreds'}
+synth_data = {'normalWeights_normalPreds_independent','normalWeights_normalPreds_not_independent','normalWeights_unifPreds','unifWeights_normalPreds_independent','unifWeights_normalPreds_not_independent','unifWeights_unifPreds'}
 
 for type in synth_data:
     delta = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]

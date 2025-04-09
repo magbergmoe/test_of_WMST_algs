@@ -108,11 +108,19 @@ for folder in os.listdir('results/'):
 
         fig, axs = plt.subplots(2,1,figsize=(20,13),gridspec_kw={'height_ratios': [7, 1]})
 
+        axs[0].tick_params(axis = 'both', labelsize = 15)
+        axs[1].tick_params(axis = 'both', labelsize = 15)
+
+        axs[0].grid(True)
+        axs[1].grid(True)
+        axs[0].set_axisbelow(True)
+        axs[1].set_axisbelow(True)
+
         plt.suptitle('\u03B5/Performance-ratio plot on 10000 randomly generated graphs\n using the Erdös-Rényi-Gilbert model', fontsize = 20,fontweight = 'bold', wrap = True)
 
-        axs[0].plot(x,y_ftp,'o',color='red', label = 'FtP')
-        axs[0].plot(x,y_gftp,'o',color = 'green', label = 'GFtP')
-        axs[0].plot(x,y_markingalg,'o',color ='blue', label = 'Third algorithm')
+        axs[0].scatter(x,y_ftp,marker = 'o',c='darkkhaki', label = 'FtP',s=80)
+        axs[0].scatter(x,y_gftp,marker = 'v',c = 'royalblue', label = 'GFtP',s=90)
+        axs[0].scatter(x,y_markingalg,marker = '*',c ='brown', label = 'MarkingAlg',s=120)
 
         match folder:
             case 'normalWeights_normalPreds_independent':
@@ -123,7 +131,7 @@ for folder in os.listdir('results/'):
                 axs[0].set_title('w: N(0.5,0.15),     w\u0302: U(0,1)',fontsize = 18)
             case 'unifWeights_normalPreds_independent':
                 axs[0].set_title('w: U(0,1),     w\u0302: N(0.5,0.15)',fontsize = 18)
-            case 'unifWeights_normalPreds_not_indepndent':
+            case 'unifWeights_normalPreds_not_independent':
                 axs[0].set_title('w: U(0,1),     w\u0302: N(w,0.15)',fontsize = 18)
             case 'unifWeights_unifPreds':
                 axs[0].set_title('w: U(0,1),     w\u0302: U(0,1)',fontsize = 18)
@@ -135,8 +143,5 @@ for folder in os.listdir('results/'):
         legend = axs[0].legend(fontsize = 18)
 
         axs[1].boxplot(x,vert=False)
-
-        axs[0].grid(True)
-        axs[1].grid(True)
 
         fig.savefig('plots/' + folder + '.png')
