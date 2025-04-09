@@ -122,11 +122,11 @@ for folder in os.listdir('results/'):
             case 'normalWeights_unifPreds':
                 axs[0].set_title('w: N(0.5,0.15),     w\u0302: U(0,1)',fontsize = 18)
             case 'unifWeights_normalPreds_independent':
-                axs[0].set_title('w: from U(0,1),     w\u0302: N(0.5,0.15)',fontsize = 18)
+                axs[0].set_title('w: U(0,1),     w\u0302: N(0.5,0.15)',fontsize = 18)
             case 'unifWeights_normalPreds_not_indepndent':
-                axs[0].set_title('w: from U(0,1),     w\u0302: N(w,0.15)',fontsize = 18)
+                axs[0].set_title('w: U(0,1),     w\u0302: N(w,0.15)',fontsize = 18)
             case 'unifWeights_unifPreds':
-                axs[0].set_title('w: from U(0,1),     w\u0302: U(0,1)',fontsize = 18)
+                axs[0].set_title('w: U(0,1),     w\u0302: U(0,1)',fontsize = 18)
         
         
         axs[0].set_xlabel('\u03B5', fontsize = 18)
