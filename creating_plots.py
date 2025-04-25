@@ -120,7 +120,7 @@ for folder in os.listdir('results/'):
 
         axs[0].scatter(x,y_ftp,marker = 'o',c='darkkhaki', label = 'FtP',s=80)
         axs[0].scatter(x,y_gftp,marker = 'v',c = 'royalblue', label = 'GFtP',s=90)
-        axs[0].scatter(x,y_markingalg,marker = '*',c ='brown', label = 'MarkingAlg',s=120)
+        axs[0].scatter(x,y_markingalg,marker = '*',c ='gold', label = 'MarkingAlg',s=120)
 
         match folder:
             case 'normalWeights_normalPreds_independent':
