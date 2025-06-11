@@ -341,7 +341,7 @@ def third_algorithm(edge_list,ad_matrix):
 
     while len(U) != 0 and num_accepted < n-1:
         U.pop(0)
-        if mark[num_revealed] == float('-inf'):
+        if mark[num_revealed] == float('inf'):
             mark[num_revealed] = edge_list[num_revealed][2]
         e_next = edge_list[num_revealed]
         index = is_in_edge_list(e_next,T) # Is the next edge in T. If not, then index = -1, otherwise, index is the index in T in which the next edge es located
